@@ -43,3 +43,13 @@ class DiskAPI:
                 "permanently": "true"
             }
         )
+    def move_resource(self, from_path, to_path):
+
+        return requests.post(
+            f"{BASE_URL}/move",
+            headers=self.headers,
+            params={
+                "from": from_path,
+                "path": to_path
+        }
+    )
